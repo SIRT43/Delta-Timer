@@ -1,0 +1,17 @@
+{
+  "name": "com.43gamestudio.initialfeaturedeltatimer",
+  "version": "1.0.0",
+  "displayName": "Initial Feature - DeltaTimer",
+  "description": "\u57fa\u4e8e Initial Framework \u7684\u589e\u91cf\u8ba1\u65f6\u5668\u3002",
+  "keywords": [
+    "Initial",
+    "Feature",
+    "Delta",
+    "Timer"
+  ],
+  "author": {
+    "name": "43GAME Studio",
+    "email": "utsirt43@163.com"
+  },
+  "unity": "2019.1"
+}

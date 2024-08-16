@@ -1,0 +1,16 @@
+{
+    "name": "43GAMEStudio.InitialFeature.DeltaTimer.Runtime",
+    "rootNamespace": "FTGAMEStudio.InitialFramework",
+    "references": [
+        "GUID:5f4eb5fd6d7b8d54888393a402f48526"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
