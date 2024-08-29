@@ -1,11 +1,11 @@
 {
-  "name": "com.43gamestudio.initialfeaturedeltatimer",
+  "name": "com.43gamestudio.deltatimer",
   "version": "1.0.0",
-  "displayName": "Initial Feature - DeltaTimer",
+  "displayName": "Delta Timer",
   "description": "\u57fa\u4e8e Initial Framework \u7684\u589e\u91cf\u8ba1\u65f6\u5668\u3002",
   "keywords": [
     "Initial",
-    "Feature",
+    "Solution",
     "Delta",
     "Timer"
   ],
@@ -13,5 +13,8 @@
     "name": "43GAME Studio",
     "email": "utsirt43@163.com"
   },
-  "unity": "2019.1"
+  "unity": "2019.1",
+  "dependencies": {
+    "com.43gamestudio.initialframework": "1.0.0"
+  }
 }
