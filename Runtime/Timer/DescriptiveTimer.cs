@@ -5,7 +5,7 @@ namespace FTGAMEStudio.InitialSolution.Timers
 {
     public interface IDescriptableTimer<T> where T : TimerDescriptive
     {
-        public T Descriptive { get; }
+        T Descriptive { get; }
     }
 
     [Serializable]

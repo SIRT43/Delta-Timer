@@ -14,10 +14,10 @@ namespace FTGAMEStudio.InitialSolution.Timers
 
     public interface IControllableTimer : IOrganized
     {
-        public void Start();
-        public void Pause();
-        public void Stop();
-        public void Destroy();
+        void Start();
+        void Pause();
+        void Stop();
+        void Destroy();
     }
 
     public abstract class ControllableTimer : TimerBase, IControllableTimer, IStatusable<TimerState>
