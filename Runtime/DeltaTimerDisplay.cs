@@ -8,7 +8,7 @@ namespace InitialSolution.Timers
     [Serializable]
     public struct DeltaTimerInfo
     {
-        public static DeltaTimerInfo[] GetTiemrInfos(IEnumerable<KeyValuePair<Guid, ControllableTimer>> timers)
+        public static DeltaTimerInfo[] GetTimerInfos(IEnumerable<KeyValuePair<Guid, ControllableTimer>> timers)
         {
             List<DeltaTimerInfo> infos = new();
 
@@ -41,7 +41,7 @@ namespace InitialSolution.Timers
     {
         public DeltaTimerInfo[] infos;
 
-        private void Update() => infos = DeltaTimerInfo.GetTiemrInfos(DeltaTimer.registry);
+        private void Update() => infos = DeltaTimerInfo.GetTimerInfos(DeltaTimer.registry);
     }
 }
 #endif
