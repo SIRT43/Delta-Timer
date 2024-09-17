@@ -1,4 +1,6 @@
 using InitialFramework.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,7 +16,7 @@ namespace InitialSolution.Timers
                 if (timers == null)
                 {
                     timers = new("Delta Timer Hub");
-                    Object.DontDestroyOnLoad(timers);
+                    UnityEngine.Object.DontDestroyOnLoad(timers);
                 }
 
                 return timers;
@@ -24,14 +26,33 @@ namespace InitialSolution.Timers
         public static readonly Organize<ControllableTimer> registry = new();
 
 
+        public static ControllableTimer[] GetTimersWithName(string timerName)
+        {
+            List<ControllableTimer> timers = new();
 
-        public static TTimer Instantiate<TTimer, TDescriptive>(TDescriptive descriptive, float period, float current = 0) where TTimer : DescriptableTimer<TDescriptive> where TDescriptive : TimerDescriptive
+            foreach (KeyValuePair<Guid, ControllableTimer> timer in registry)
+            {
+                if (timer.Value.timerName == timerName) timers.Add(timer.Value);
+            }
+
+            return timers.ToArray();
+        }
+        public static ControllableTimer GetTimerWithName(string timerName)
+        {
+            ControllableTimer[] timers = GetTimersWithName(timerName);
+            return timers.Length == 0 ? null : timers[0];
+        }
+
+
+
+        public static TTimer Instantiate<TTimer, TDescriptive>(TDescriptive descriptive, float period, float current = 0, string timerName = null) where TTimer : DescriptableTimer<TDescriptive> where TDescriptive : TimerDescriptive
         {
             TTimer timer = Timers.AddComponent<TTimer>();
 
             timer.Descriptive = descriptive;
             timer.Period = period;
             timer.Current = current;
+            timer.timerName = string.IsNullOrEmpty(timerName) ? timer.timerName : timerName;
 
             registry.RegValue(timer);
             timer.Descriptive.onClose += (timer) => registry.RemoveValue(timer.Guid);

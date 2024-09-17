@@ -23,6 +23,7 @@ namespace InitialSolution.Timers
     public abstract class ControllableTimer : TimerBehaviour, IOrganized, IControllableTimer, IStatusable<TimerState>
     {
         public Guid Guid { get; } = Guid.NewGuid();
+        public string timerName = "New Timer";
 
 
         private TimerState state = TimerState.Stopped;
