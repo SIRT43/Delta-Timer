@@ -8,7 +8,7 @@ namespace InitialSolution.Timers
         /// 周期，计数器间隔多长时间 <see cref="Invoke"/> 一次。
         /// </summary>
         float Period { get; set; }
-        float Current { get; }
+        float Current { get; set; }
 
         /// <summary>
         /// 调用本计时器的事件。

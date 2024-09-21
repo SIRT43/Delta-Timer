@@ -31,9 +31,7 @@ namespace InitialSolution.Timers
             List<ControllableTimer> timers = new();
 
             foreach (KeyValuePair<Guid, ControllableTimer> timer in registry)
-            {
                 if (timer.Value.timerName == timerName) timers.Add(timer.Value);
-            }
 
             return timers.ToArray();
         }
@@ -52,7 +50,7 @@ namespace InitialSolution.Timers
             timer.Descriptive = descriptive;
             timer.Period = period;
             timer.Current = current;
-            timer.timerName = string.IsNullOrEmpty(timerName) ? timer.timerName : timerName;
+            timer.timerName = string.IsNullOrEmpty(timerName) ? timer.Guid.ToString() : timerName;
 
             registry.RegValue(timer);
             timer.Descriptive.onClose += (timer) => registry.RemoveValue(timer.Guid);

@@ -62,7 +62,7 @@ namespace InitialSolution.Timers
 
         public virtual bool CloseTimer()
         {
-            if (State == TimerState.Closed) return false;
+            if (State is TimerState.Closed) return false;
             State = TimerState.Closed;
 
             Destroy(this);
